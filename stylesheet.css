@@ -209,3 +209,18 @@ td {
   }
 
 }
+
+.errorResponse {
+  display: none;
+  color: #FFF;
+  text-align: center;
+}
+
+.buttonLoading {
+  background-color: #FFF;
+  color: #A90001;
+  display: none;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
