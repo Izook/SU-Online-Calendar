@@ -1,63 +1,116 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Seattle University Student Schedule Calendar</title>
-  <meta name="description" content="SU Course Calendar">
-  <meta name="author" content="Audrey Kan">
-  <link rel="stylesheet" href="base.css">
-  <link rel="stylesheet" href="stylesheet.css">
+	<meta charset="utf-8">
+	<title>Seattle University, SU Online Calendar</title>
+	<meta name="description" content="SU Online Calendar">
+	<meta name="author" content="Audrey Kan">
+	<link rel="stylesheet" href="/Users/audreykan/Desktop/su/base.css">
+	<link rel="stylesheet" href="/Users/audreykan/Desktop/su/stylesheet.css">
+	<script src="/Users/audreykan/Desktop/su/script.js"></script>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:400">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
-  <header>
-    <div>
-      <img src="su-logo.png" alt="SeattleU Logo" class="logo">
-      <div class="title">
-        <h1>Login</h1>
-      </div>
-    </header>
+	<header>
+		<div>
+			<img src="/Users/audreykan/Desktop/su/su-logo.png" alt="SeattleU Logo" class="logo"></img>
+			<div class="title">
+				<h1 id="login-title">Login</h1>
+				<h1 id="calendar-title">Calendar Viewer</h1>
+			</div>
+		</div>
+	</header>
 
-    <section id="login">
-      <div class="login-content">
-        <form id="login" action="" method="get">
-          <img src="su-seal.png" alt="SeattleU Seal" class="seal">
-          <div class="container">
-            <input type="user" placeholder="Student Username" name="uname" required>
-            <input type="password" placeholder="Enter Password" name="psw" required>
-            <button type="button" value="Login">Submit</button>
-          </div>
-        </form>
-      </div>
-    </section>
+	<section id="login-page">
+		<div class="login-content">
+			<form id="login" action="" method="get">
+				<img src="/Users/audreykan/Desktop/su/su-seal.png" alt="SeattleU Seal" class="seal">
+				<div class="container">
+					<input type="user" placeholder="Student Username" name="uname" required>
+					<input type="password" placeholder="Enter Password" name="psw" required>
+					<button type="button" id ="hide" value="submit" onclick="getLogin(); switchView();">Submit</button>
+				</div>
+			</form>
+		</div>
+	</section>
 
-    <section id="schedule">
-      <div class="schedule-content">
-        <select id="quarters">
-          <option value="WQ">Winter Quarter 2019
-            <option value="SQ">Spring Quarter 2019
-              <option value="FQ">Fall Quarter 2019
-              </select>
-              <br>
-              <div class="cal-week">
-                <div class="cal-header">
-                  <table class="cal-days" align="center">
-                    <tr>
-                      <td>MON</td>
-                      <td>TUES</td>
-                      <td>WED</td>
-                      <td>THURS</td>
-                      <td>FRI</td>
-                    </tr>
-                  </table>
-                </div>
-                <p id="stu-schedule"></p>
-              </div>
-              <button type="button" value="Login">Add to Calendar</button>
-            </div>
-          </section>
+	<section id="schedule-page">
+		<div class="schedule-content">
+			<select id="quarters">
+				<option value="WQ">Winter Quarter 2019</option>
+				<option value="SQ">Spring Quarter 2019</option>
+				<option value="FQ">Fall Quarter 2019</option>
+			</select>
+			<br>
+			<div id="table-scroll">
+				<table id="student-schedule">
+					<thead>
+						<tr>
+							<th><div label="mon">MON</div></th>
+							<th><div label="tues">TUES</div></th>
+							<th><div label="wed">WED</div></th>
+							<th><div label="thurs">THURS</div></th>
+							<th><div label="fri">FRI</div></th>
+							<th class="scrollbarhead"/>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>6:00am</td><td></td><td></td><td></td><td></td><td></td>
+						</tr>
+						<tr>
+							<td>7:00am</td><td></td><td></td><td></td><td></td><td></td>
+						</tr>
+						<tr>
+							<td>8:00am</td><td></td><td></td><td></td><td></td><td></td>
+						</tr>
+						<tr>
+							<td>9:00am</td><td></td><td></td><td></td><td></td><td></td>
+						</tr>
+						<tr>
+							<td>10:00am</td><td></td><td></td><td></td><td></td><td></td>
+						</tr>
+						<tr>
+							<td>11:00am</td><td></td><td></td><td></td><td></td><td></td>
+						</tr>
+						<tr>
+							<td>12:00pm</td><td></td><td></td><td></td><td></td><td></td>
+						</tr>
+						<tr>
+							<td>1:00pm</td><td></td><td></td><td></td><td></td><td></td>
+						</tr>
+						<tr>
+							<td>2:00pm</td><td></td><td></td><td></td><td></td><td></td>
+						</tr>
+						<tr>
+							<td>3:00pm</td><td></td><td></td><td></td><td></td><td></td>
+						</tr>
+						<tr>
+							<td>4:00pm</td><td></td><td></td><td></td><td></td><td></td>
+						</tr>
+						<tr>
+							<td>5:00pm</td><td></td><td></td><td></td><td></td><td></td>
+						</tr>
+						<tr>
+							<td>6:00pm</td><td></td><td></td><td></td><td></td><td></td>
+						</tr>
+						<tr>
+							<td>7:00pm</td><td></td><td></td><td></td><td></td><td></td>
+						</tr>
+						<tr>
+							<td>8:00pm</td><td></td><td></td><td></td><td></td><td></td>
+						</tr>
+						<tr>
+							<td>9:00pm</td><td></td><td></td><td></td><td></td><td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 
-          <script src="hacksu.js"></script>
-          <script src="scripts.js"></script>
-        </body>
-        </html>
+			<button type="button" id="add" value="Login" onclick="showSchedule();">Add to Calendar</button>
+		</div>
+	</section>
+</body>
+</html>
