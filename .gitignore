@@ -38,9 +38,12 @@ Thumbs.db
 
 # Node Modules #
 ################
-Node/
-node_modules/
+Node/*
+/Node/*
+node_modules/*
+/node_modules/*
 
 # Chrome Extension #
 ####################
-Extension/
+Extension/*
+/Extension/*
