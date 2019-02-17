@@ -20,21 +20,36 @@ h1 {
   display: none;
 }
 
-div.title {
+/*
+#calendar-title, #login-title {
   width: 1000px;
   text-align: center;
   display: block;
 }
+*/
+
+title {
+    position: relative;
+}
+
+/* This is how to float an image */
+#calendar-title, #login-title {
+    float: left;
+}
 
 div.login-content, div.schedule-content {
-  background-color: #e9e9e9;
   padding: 4vh 20px 20px;
   margin: 50px auto 10px auto;
   border-radius: 10px;
 }
 
+div. schedule-content {
+  background-color: #e9e9e9;
+}
+
 div.login-content {
   background: linear-gradient(rgba(233, 233, 233, 0.9)), rgba(233, 233, 233, 0.9)), url(campus-library.jpg);
+  background-position: right;
   width: 45vw;
   height: 65vh;
 }

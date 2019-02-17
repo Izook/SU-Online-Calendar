@@ -1,6 +1,8 @@
-$("#submitHide").click(function() {
-    $("#login-title").hide();
-    $("#login-page").hide();
-    $("#calendar-title").show();
-    $("#schedule-page").show();
-});
+$(document).ready(function () {
+  $("#submitHide").click(function() {
+      $("#login-title").hide();
+      $("#login-page").hide();
+      $("#calendar-title").show();
+      $("#schedule-page").show();
+  });
+})
