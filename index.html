@@ -46,53 +46,53 @@
 				<table id="student-schedule">
 					<thead>
 						<tr>
-							<th><div label="mon"></div></th>
-							<th><div label="mon">MON</div></th>
-							<th><div label="tues">TUES</div></th>
-							<th><div label="wed">WED</div></th>
-							<th><div label="thurs">THURS</div></th>
-							<th><div label="fri">FRI</div></th>
+							<th><div></div></th>
+							<th><div id="mon">MON</div></th>
+							<th><div id="tues">TUES</div></th>
+							<th><div id="wed">WED</div></th>
+							<th><div id="thurs">THURS</div></th>
+							<th><div id="fri">FRI</div></th>
 							<th class="scrollbarhead"/>
 						</tr>
 					</thead>
 					<tbody class = "times">
-						<tr>
+						<tr id="0600">
 							<td>6:00am</td><td></td><td></td><td></td><td></td><td></td>
 						</tr>
-						<tr>
+						<tr id="0700">
 							<td>7:00am</td><td></td><td></td><td></td><td></td><td></td>
 						</tr>
-						<tr>
+						<tr id="0800">
 							<td>8:00am</td><td></td><td></td><td></td><td></td><td></td>
 						</tr>
-						<tr>
+						<tr id="0900">
 							<td>9:00am</td><td></td><td></td><td></td><td></td><td></td>
 						</tr>
-						<tr>
+						<tr id="1000">
 							<td>10:00am</td><td></td><td></td><td></td><td></td><td></td>
 						</tr>
-						<tr>
+						<tr id="1100">
 							<td>11:00am</td><td></td><td></td><td></td><td></td><td></td>
 						</tr>
-						<tr>
+						<tr id="1200">
 							<td>12:00pm</td><td></td><td></td><td></td><td></td><td></td>
 						</tr>
-						<tr>
+						<tr id="1300">
 							<td>1:00pm</td><td></td><td></td><td></td><td></td><td></td>
 						</tr>
-						<tr>
+						<tr id="1400">
 							<td>2:00pm</td><td></td><td></td><td></td><td></td><td></td>
 						</tr>
-						<tr>
+						<tr id="1500">
 							<td>3:00pm</td><td></td><td></td><td></td><td></td><td></td>
 						</tr>
-						<tr>
+						<tr id="1600">
 							<td>4:00pm</td><td></td><td></td><td></td><td></td><td></td>
 						</tr>
-						<tr>
+						<tr id="1700">
 							<td>5:00pm</td><td></td><td></td><td></td><td></td><td></td>
 						</tr>
-						<tr>
+						<tr id="1800">
 							<td>6:00pm</td><td></td><td></td><td></td><td></td><td></td>
 						</tr>
 						<tr>
@@ -108,7 +108,7 @@
 				</table>
 			</div>
 
-			<button type="button" id="add">Add to Calendar</button>
+			<button type="button" id="add" onclick="showSchedule();">Add to Calendar</button>
 		</div>
 	</section>
 </body>
