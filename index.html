@@ -7,9 +7,9 @@
 	<meta name="author" content="Audrey Kan">
 	<link rel="stylesheet" href="base.css">
 	<link rel="stylesheet" href="stylesheet.css">
-	<script src="script.js"></script>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:400">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
 </head>
 
 <body>
@@ -26,11 +26,11 @@
 	<section id="login-page">
 		<div class="login-content">
 			<form id="login" action="" method="get">
-				<img src="u-seal.png" alt="SeattleU Seal" class="seal">
+				<img src="su-seal.png" alt="SeattleU Seal" class="seal">
 				<div class="container">
 					<input type="user" placeholder="Student Username" name="uname" required>
 					<input type="password" placeholder="Enter Password" name="psw" required>
-					<button type="button" id ="hide" value="submit" onclick="getLogin(); switchView();">Submit</button>
+					<button type="button" id ="submitHide">Submit</button>
 				</div>
 			</form>
 		</div>
@@ -48,6 +48,7 @@
 				<table id="student-schedule">
 					<thead>
 						<tr>
+							<th><div label="mon"></div></th>
 							<th><div label="mon">MON</div></th>
 							<th><div label="tues">TUES</div></th>
 							<th><div label="wed">WED</div></th>
@@ -56,7 +57,7 @@
 							<th class="scrollbarhead"/>
 						</tr>
 					</thead>
-					<tbody>
+					<tbody class = "times">
 						<tr>
 							<td>6:00am</td><td></td><td></td><td></td><td></td><td></td>
 						</tr>
@@ -109,7 +110,7 @@
 				</table>
 			</div>
 
-			<button type="button" id="add" value="Login" onclick="showSchedule();">Add to Calendar</button>
+			<button type="button" id="add" onclick="showSchedule();">Add to Calendar</button>
 		</div>
 	</section>
 </body>
