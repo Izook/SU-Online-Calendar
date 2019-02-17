@@ -1,0 +1,139 @@
+@import url(//fonts.googleapis.com/css?family=Oswald:400);
+
+body {
+  font-family: Oswald;
+  line-height: 1.5;
+  background-color: #ffffff;
+  color: #ffffff;
+}
+
+header {
+  width: 100vw;
+  height: 20vh;
+  background-color: #a90001;
+  padding-top: 15px;
+}
+
+h1 {
+  font-size: 35px;
+}
+
+section.schedule {
+  display: none;
+}
+
+/*TODO: Need to center title text*/
+div.title {
+  display: inline-block;
+  left: 50%;
+  right: 50%;
+}
+
+div.login-content,
+div.schedule-content {
+  background-color: #e9e9e9;
+  padding: 4vh 20px 20px;
+  margin: 50px auto 10px auto;
+  border-radius: 10px;
+}
+div.login-content {
+  width: 45vw;
+  height: 65vh;
+}
+
+div.schedule-content {
+  width: 90vw;
+  height: 65vh;
+}
+
+input[type='user'],
+input[type='password'] {
+  padding: 15px 20px 15px 20px;
+  margin: 10px 0 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #a90001;
+  color: white;
+  font-family: Oswald;
+  font-size: 20px;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+input[type='user'],
+input[type='password'],
+button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+img.seal {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 23%;
+}
+
+img.logo {
+  display: inline-block;
+  margin: 15px 0 0 30px;
+  width: 200px;
+}
+
+.container {
+  padding: 16px;
+  display: ;
+}
+
+#quarters {
+  font-family: Oswald;
+  color: #333333;
+  width: 200px;
+  display: block;
+  padding: 10px 15px 10px 15px;
+  margin: auto auto;
+  border: none;
+  border-radius: 10px;
+}
+
+div.cal-week,
+div.cal-header {
+  width: 80vw;
+  display: block;
+  margin: auto auto;
+}
+
+div.cal-week {
+  background-color: #ffffff;
+  height: 40vh; /*Will need to use AJAX to load calendar data*/
+}
+
+div.cal-header {
+  background-color: #a90001;
+  height: 10vh;
+}
+
+table.cal-days {
+  font-size: 35px;
+  border: 1px;
+}
+
+td {
+  padding-top: 5px;
+  padding-left: 5vw;
+  padding-right: 5vw;
+
+}
