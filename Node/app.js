@@ -70,6 +70,12 @@ var getScheduleJSONServer = http.createServer(function (req, res) {
             // Upon requiring all POST data
             req.on('end', function () {
                 try {
+                    // Allow CORS Headers
+                    res.setHeader('Access-Control-Allow-Origin', '*');
+                    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
+                    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,contenttype'); // If needed
+                    res.setHeader('Access-Control-Allow-Credentials', true); // If needed
+
                     // Convert body to JSON
                     var queryData = JSON.parse(body);
 
