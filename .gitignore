@@ -38,10 +38,10 @@ Thumbs.db
 
 # Node Modules #
 ################
-/Node/
+Node/
 .Node
 
 # Chrome Extension #
 ####################
-/Extension
+Extension/
 .Extension
