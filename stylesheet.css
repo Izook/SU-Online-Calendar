@@ -15,7 +15,7 @@ header {
 h1 {
   font-size: 35px;
 }
-
+/*
 #login-title {
   display: none;
 }
@@ -23,8 +23,8 @@ h1 {
 #login-page {
   display: none;
 }
+*/
 
-/*
 #calendar-title {
   display: none;
 }
@@ -32,7 +32,6 @@ h1 {
 #schedule-page {
   display: none;
 }
-*/
 
 /*TODO: Need to center title text*/
 div.title {
@@ -138,6 +137,9 @@ div.cal-week {
   height: 150px;
   overflow: auto;
   margin-top: 20px; /*might need to change value*/
+}
+#student-schedule {
+  background: #fffff;
 }
 
 #student-schedule thead {
