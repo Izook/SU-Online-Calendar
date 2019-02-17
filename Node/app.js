@@ -88,7 +88,7 @@ var getScheduleJSONServer = http.createServer(function (req, res) {
                         console.log(res);
 
                         try {
-                            getPhantomBrowsedCalendarHTML(res, "ortegai", "OrangutanCanteloupe");
+                            getPhantomBrowsedCalendarHTML(res, username, password);
                         }
                         catch (err) {
                             // Create and return error JSON response
