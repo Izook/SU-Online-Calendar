@@ -881,6 +881,10 @@ function parseScheduleHTMLtoJSON(response, scheduleHTML) {
             course.startTime = startTimeRegEx.exec(meetingInfo)[0];
             course.endTime = endTimeRegEx.exec(meetingInfo)[0].substring(2);
 
+            // Format times to military times
+            course.startTimeMilitary = toMilitaryTime(course.startTime);
+            course.endTimeMilitary = toMilitaryTime(course.endTime);
+
             // Getting Location and Instructor
             var indexPastEndTime = meetingInfo.indexOf(course.endTime) + course.endTime.length;
             var locationInstructor = meetingInfo.substring(indexPastEndTime);
@@ -924,4 +928,29 @@ function parseScheduleHTMLtoJSON(response, scheduleHTML) {
 // Outlook calendar links.  [NOT YET IMPLEMENTED]
 function getCalendarLinks(scheduleJSON) {
 
+}
+
+// Formats classic time strings into military time earliest hour
+// e.g. [Hour]:[Minute][Meridiem] -> [0000-2300]
+function toMilitaryTime(time) {
+
+    // Instantiate regular expressions
+    var meridiemRegEx = /(AM)|PM/g;
+    var hourRegEx = /([0-9]+):/g;
+
+    // Get Merdiem
+    var merdiem = meridiemRegEx.exec(time)[0];
+
+    // Get Hour
+    var hour = hourRegEx.exec(time)[1];
+
+    // Return military hour from expression
+    if (merdiem == 'AM') {
+        return hour + "00";
+    }
+    else {
+        hour = parseInt(hour) + 12;
+        hour = hour * 100;
+        return hour.toString();
+    }
 }
