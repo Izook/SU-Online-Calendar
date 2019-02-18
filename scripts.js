@@ -37,7 +37,9 @@ function changeColor(course, c) {
       row = document.getElementById(currTime);
       if (course.mw) {
         row[1].style.color = c;
+        row.[1].innerHTML = courseCode;
         row[3].style.color = c;
+        row.[1].innerHTML = location;
         if (course.f) {
           row[5].style.color = c;
         }
