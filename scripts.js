@@ -30,29 +30,72 @@ function changeColor(course, c) {
     }
 
     currTime = start;
+    row = document.getElementById(currTime);
+
+    if (course.mw) {
+      row.children[1].style.backgroundColor = c;
+      row.children[1].style.color = '#FFFFFF';
+      row.children[1].innerHTML = courseCode;
+      row.children[3].style.backgroundColor = c;
+      row.children[3].style.color = '#FFFFFF';
+      row.children[3].innerHTML = courseCode;
+      if (course.f) {
+        row.children[5].style.backgroundColor = c;
+        row.children[5].style.color = '#FFFFFF';
+        row.children[5].innerHTML = courseCode;
+      }
+    } else if (course.tth) {
+      row.children[2].style.backgroundColor = c;
+      row.children[2].style.color = '#FFFFFF';
+      row.children[2].innerHTML = courseCode;
+      row.children[4].style.backgroundColor = c;
+      row.children[4].style.color = '#FFFFFF';
+      row.children[4].innerHTML = courseCode;
+    }
+    if (parseInt(currTime) < 900) {
+      currTime = "0" + (parseInt(currTime) + 100).toString();
+    }
+    else {
+      currTime = (parseInt(currTime) + 100).toString();
+    }
+
+    if (course.mw) {
+      row.children[1].style.backgroundColor = c;
+      row.children[1].style.color = '#FFFFFF';
+      row.children[1].innerHTML = location;
+      row.children[3].style.backgroundColor = c;
+      row.children[3].style.color = '#FFFFFF';
+      row.children[3].innerHTML = location;
+      if (course.f) {
+        row.children[5].style.backgroundColor = c;
+        row.children[5].style.color = '#FFFFFF';
+        row.children[5].innerHTML = location;
+      }
+    } else if (course.tth) {
+      row.children[2].style.backgroundColor = c;
+      row.children[2].style.color = '#FFFFFF';
+      row.children[2].innerHTML = location;
+      row.children[4].style.backgroundColor = c;
+      row.children[4].style.color = '#FFFFFF';
+      row.children[4].innerHTML = location;
+    }
+    if (parseInt(currTime) < 900) {
+      currTime = "0" + (parseInt(currTime) + 100).toString();
+    }
+    else {
+      currTime = (parseInt(currTime) + 100).toString();
+    }
+
     while (parseInt(currTime) <= endTime) {
-      console.log(currTime);
-      row = document.getElementById(currTime);
-      console.log(row);
       if (course.mw) {
         row.children[1].style.backgroundColor = c;
-        row.children[1].style.color = '#FFFFFF';
-        row.children[1].innerHTML = courseCode;
         row.children[3].style.backgroundColor = c;
-        row.children[3].style.color = '#FFFFFF';
-        row.children[3].innerHTML = courseCode;
         if (course.f) {
           row.children[5].style.backgroundColor = c;
-          row.children[5].style.color = '#FFFFFF';
-          row.children[5].innerHTML = courseCode;
         }
       } else if (course.tth) {
         row.children[2].style.backgroundColor = c;
-        row.children[2].style.color = '#FFFFFF';
-        row.children[2].innerHTML = courseCode;
         row.children[4].style.backgroundColor = c;
-        row.children[4].style.color = '#FFFFFF';
-        row.children[4].innerHTML = courseCode;
       }
       if (parseInt(currTime) < 900) {
         currTime = "0" + (parseInt(currTime) + 100).toString();
