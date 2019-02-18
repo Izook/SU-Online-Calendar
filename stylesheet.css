@@ -16,6 +16,9 @@ h1 {
   font-size: 35px;
 }
 
+a.download {
+  text-decoration: none;
+}
 #calendar-title, #schedule-page {
   display: none;
 }
