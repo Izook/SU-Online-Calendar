@@ -13,6 +13,7 @@ function changeCells(course, c, text, currTime) {
     row.children[1].style.backgroundColor = c;
     row.children[1].style.color = '#FFFFFF';
     row.children[1].innerHTML = text;
+
     row.children[3].style.backgroundColor = c;
     row.children[3].style.color = '#FFFFFF';
     row.children[3].innerHTML = text;
@@ -46,20 +47,25 @@ function updateSchedule(course, c) {
     course.tth = true;
   } else if (course.onMonday == true && course.onWednesday == true) {
     course.mw = true;
-    if (course.onFriday == true)
+    if (course.onFriday == true) {
       course.f = true;
+    }
   }
 
   currTime = startTime;
+  if (parseInt(currTime) < 900) {
+    currTime = "0" + currTime.toString();
+  }
   changeCells(course, c, courseCode, currTime);
+
   if (parseInt(currTime) < 900) {
     currTime = "0" + (parseInt(currTime) + 100).toString();
   }
   else {
     currTime = (parseInt(currTime) + 100).toString();
   }
-
   changeCells(course, c, location, currTime);
+
   if (parseInt(currTime) < 900) {
     currTime = "0" + (parseInt(currTime) + 100).toString();
   }
