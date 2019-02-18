@@ -8,7 +8,7 @@ $(document).ready(function () {
 })
 
 function clear() {
-  document.getElementsByTagName('td').backgroundColor = #ffffff;
+  document.getElementsByTagName('td').backgroundColor = '#ffffff';
 }
 
 function changeColor(course, c) {
@@ -19,8 +19,7 @@ function changeColor(course, c) {
   var room = course.roomNum.replace(course.roomNum.substring(0, 3), "");
   var location = building + " " + room;
   var start = course.startTimeMilitary;
-  var end = course.endTimeMilitary;
-  courses.forEach(function(course) {
+  var endTime = course.endTimeMilitary;
     if (course.onTuesday == true && course.onThursday == true) {
       course.tth = true;
     } else if (course.onMonday == true && course.onWednesday == true) {
@@ -29,27 +28,39 @@ function changeColor(course, c) {
         course.f = true;
       }
     }
-  })
 
-  for course in courses {
     currTime = start;
-    for (currTime <= end {
+    while (parseInt(currTime) <= endTime) {
+      console.log(currTime);
       row = document.getElementById(currTime);
+      console.log(row);
       if (course.mw) {
-        row[1].style.color = c;
-        row.[1].innerHTML = courseCode;
-        row[3].style.color = c;
-        row.[1].innerHTML = location;
+        row.children[1].style.backgroundColor = c;
+        row.children[1].style.color = '#FFFFFF';
+        row.children[1].innerHTML = courseCode;
+        row.children[3].style.backgroundColor = c;
+        row.children[3].style.color = '#FFFFFF';
+        row.children[3].innerHTML = courseCode;
         if (course.f) {
-          row[5].style.color = c;
+          row.children[5].style.backgroundColor = c;
+          row.children[5].style.color = '#FFFFFF';
+          row.children[5].innerHTML = courseCode;
         }
       } else if (course.tth) {
-        row[2].style.color = c;
-        row[4].style.color = c;
+        row.children[2].style.backgroundColor = c;
+        row.children[2].style.color = '#FFFFFF';
+        row.children[2].innerHTML = courseCode;
+        row.children[4].style.backgroundColor = c;
+        row.children[4].style.color = '#FFFFFF';
+        row.children[4].innerHTML = courseCode;
       }
-      currTime = (parseInt(currTime) + 100).toString();
+      if (parseInt(currTime) < 900) {
+        currTime = "0" + (parseInt(currTime) + 100).toString();
+      }
+      else {
+        currTime = (parseInt(currTime) + 100).toString();
+      }
     }
-  }
 }
 
 function showSchedule(student_courses) {

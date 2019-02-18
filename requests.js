@@ -52,6 +52,7 @@ function requestScheduleJSON(username, password) {
             console.log(data);
 
             // Begin calendar population
+            showSchedule(data);
 
             // Hide login Page
             $("#login-title").hide();
