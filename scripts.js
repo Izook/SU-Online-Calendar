@@ -30,14 +30,13 @@ function changeColor(course, c) {
     }
 
     currTime = start;
-    row = document.getElementById(currTime);
 
     while (parseInt(currTime) <= endTime) {
+      row = document.getElementById(currTime);
       if (course.mw) {
         row.children[1].style.backgroundColor = c;
         row.children[1].style.color = '#FFFFFF';
         row.children[1].innerHTML = courseCode;
-
         row.children[3].style.backgroundColor = c;
         row.children[3].style.color = '#FFFFFF';
         row.children[3].innerHTML = courseCode;
