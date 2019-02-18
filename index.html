@@ -27,9 +27,11 @@
 			<form id="login" action="" method="get">
 				<img src="su-seal.png" alt="SeattleU Seal" class="seal">
 				<div class="container">
-					<input type="user" placeholder="Student Username" name="uname" required>
-					<input type="password" placeholder="Enter Password" name="psw" required>
+					<h2 class="errorResponse">Login Credentials Invalid</h2>
+					<input id="userNameInput" type="user" placeholder="Student Username" name="uname" required>
+					<input id="passWordInput" type="password" placeholder="Enter Password" name="psw" required>
 					<button type="button" id ="submitHide">Submit</button>
+					<div class="buttonLoading" >L O A D I N G</div>
 				</div>
 			</form>
 		</div>

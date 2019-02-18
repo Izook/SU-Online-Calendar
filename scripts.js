@@ -1,9 +1,9 @@
 $(document).ready(function () {
-  $("#submitHide").click(function() {
-      $("#login-title").hide();
-      $("#login-page").hide();
-      $("#calendar-title").show();
-      $("#schedule-page").show();
+  $("#submitHide").unbind('click');
+  $("#submitHide").on('click', function() {
+    var username = $("#userNameInput").val();
+    var password = $("#passWordInput").val();
+    requestScheduleJSON(username,password);
   });
 })
 
