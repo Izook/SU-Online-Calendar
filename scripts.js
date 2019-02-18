@@ -7,7 +7,8 @@ $(document).ready(function () {
   });
 })
 
-function changeCells(row, course, c, text) {
+function changeCells(course, c, text, currTime) {
+  row = document.getElementById(currTime);
   if (course.mw) {
     row.children[1].style.backgroundColor = c;
     row.children[1].style.color = '#FFFFFF';
@@ -50,9 +51,7 @@ function updateSchedule(course, c) {
   }
 
   currTime = startTime;
-  row = document.getElementById(currTime);
-  changeCells(row, course, c, courseCode);
-
+  changeCells(course, c, courseCode, currTime);
   if (parseInt(currTime) < 900) {
     currTime = "0" + (parseInt(currTime) + 100).toString();
   }
@@ -60,9 +59,7 @@ function updateSchedule(course, c) {
     currTime = (parseInt(currTime) + 100).toString();
   }
 
-  row = document.getElementById(currTime);
-  changeCells(row, course, c, location);
-
+  changeCells(course, c, location, currTime);
   if (parseInt(currTime) < 900) {
     currTime = "0" + (parseInt(currTime) + 100).toString();
   }
@@ -71,8 +68,7 @@ function updateSchedule(course, c) {
   }
 
   while (parseInt(currTime) <= endTime) {
-    row = document.getElementById(currTime);
-    changeCells(currTime, course, c, courseCode, "");
+    changeCells(course, c, "", currTime);
     if (parseInt(currTime) < 900) {
       currTime = "0" + (parseInt(currTime) + 100).toString();
     }
